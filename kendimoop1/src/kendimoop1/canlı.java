@@ -9,6 +9,6 @@ package kendimoop1;
  *
  * @author baki
  */
-public class canlı {
-    
+public class canlı extends hayvan {
+    String omurgalı;
 }

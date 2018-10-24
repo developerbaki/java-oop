@@ -16,7 +16,7 @@ public class Oop1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        insan ali = new insan();
+        calisan ali = new calisan();
         ali.boy = 1.80;
         ali.kilo = 85;
         ali.yas = 25;
@@ -33,6 +33,7 @@ public class Oop1 {
         ali.maas = 1500;
         ali.zam(5);
         System.out.println("veli maas:" + ali.maas);
+        
         
     }
 

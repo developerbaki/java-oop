@@ -16,8 +16,8 @@ public class Kendimoop1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        hayvan kedi = new hayvan();
-        hayvan balık = new hayvan();
+        canlı kedi = new canlı();
+        canlı balık = new canlı();
         balık.akciger = "akciğer solunumu yapmaz";
         balık.ayak = 0;
         balık.omurgalı = "omurgalı değil";
@@ -26,7 +26,7 @@ public class Kendimoop1 {
         kedi.omurgalı = "omurgalıdır.";
         System.out.println(" balık solunum: " + balık.akciger + " balık ayak sayısı " + balık.ayak + " kedi ayak sayısı " + kedi.ayak + " kedi solunum: " + kedi.akciger);
         kedi.sakat();
-        System.out.println("kedi ayağı:" + kedi.ayak);
+        System.out.println("kedi ayağı: " + kedi.ayak);
     }
 
 }

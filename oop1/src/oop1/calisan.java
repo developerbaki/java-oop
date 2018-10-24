@@ -9,6 +9,10 @@ package oop1;
  *
  * @author baki
  */
-public class calisan {
+public class calisan extends insan {
+    int maas;
+    void zam(int oran){
+        maas= maas + maas*oran/100;
     
+}
 }

@@ -11,7 +11,7 @@ package kendimoop1;
  */
 public class hayvan {
     int ayak;
-    String omurgalı;
+    
     String akciger;
     void sakat(){
     ayak--;
