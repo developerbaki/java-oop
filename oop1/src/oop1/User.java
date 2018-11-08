@@ -5,14 +5,17 @@
  */
 package oop1;
 
+
+
 /**
  *
  * @author baki
  */
-public class calisan extends insan {
-    int maas;
-    void zam(int oran){
-        maas= maas + (maas*(oran/100));
-    
-}
+public class User {
+
+    String userName;
+    String password;
+    String fullName;
+    String birthDate;
+
 }

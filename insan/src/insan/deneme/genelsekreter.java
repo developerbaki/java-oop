@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package oop1;
+package insan.deneme;
 
 /**
  *
  * @author baki
  */
-public class calisan extends insan {
-    int maas;
-    void zam(int oran){
-        maas= maas + (maas*(oran/100));
-    
-}
+public class genelsekreter extends sekreter {
+    public void yetki(int x){
+    System.out.println("en yetkili benim");
+    }
 }
