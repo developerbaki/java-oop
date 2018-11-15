@@ -21,8 +21,10 @@ public class UserActions {
 
     public List<User> getUsers() {
         return this.users;
+        
 
     }
+    
 
     boolean login(String userName, String password) {
         //logiin methodunda tüm kullanıclarda döneceksin username eşit olana bak sonrasında girilen passworda eşitse true.
