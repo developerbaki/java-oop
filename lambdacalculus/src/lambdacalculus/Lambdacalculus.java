@@ -10,10 +10,11 @@ package lambdacalculus;
  * @author baki
  */
 public class Lambdacalculus {
-    interface lambda{
+    interface lambda{ 
     int calistir(int x, int y);
     
     }
+    //aylık ciromu hafta bazlı gösteren kod
 
     /**
      * @param args the command line arguments
@@ -26,7 +27,8 @@ public class Lambdacalculus {
         // TODO code application logic here
         int j=5;
         Lambda_expression le = new Lambda_expression();
-        System.out.println(""+ le.f(j));
+        System.out.println(""+ le.run(j,6));
+        System.out.println(""+ le.cevir("abdullah eroğlu"));
         String s = "deneme";
         System.out.println(s.charAt(3));
        // s.charAt(3)= "k"; // Java da stringler immutable'dır. Değiştirilemez. 

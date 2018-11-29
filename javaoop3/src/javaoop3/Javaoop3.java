@@ -34,7 +34,7 @@ public class Javaoop3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        insan veli;
+        insan veli= new insan();               
         insan ali = new insan(23, 93, 180);
         veli.boy = 170;
         veli.yas = 28;

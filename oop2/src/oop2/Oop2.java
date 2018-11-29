@@ -18,19 +18,20 @@ public class Oop2 {
         // TODO code application logic here
         int a = 3;
         System.out.println(a++);
+         System.out.println(a);
         System.out.println(++a);
         if (a == 5 && ++a >= 2) {
 
         }
         System.out.println("a:" + a);
-        a = (a < 4) ? 0 : 100;
+        a = (a < 4) ? 0 : 100;// ? if olarak kullanılır.
         System.out.println("a:" + a);
         
-        int b = 13;
+        int b = 13;  
         System.out.println("" +(b >> 1));//2lik tabanda sayıyı bir saga kaydırırken kullanırız.
         System.out.println("shift 2" + (b << 1));
     }
     
     
-4
+
 }
