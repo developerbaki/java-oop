@@ -12,11 +12,27 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <jsp:useBean id="ilkCekirdek" scope="session" class="veri.Kisi" />
-        <jsp:setProperty name="ilkCekirdek" property="isim" />
-        Merhaba
-        <jsp:getProperty name="ilkCekirdek" property="isim" />
-        Siteme Hos Geldin
+        <jsp:useBean id="kisi" scope="session" class="veri.Kisi" />
+        <jsp:setProperty name="kisi" property="isim" />
+        <jsp:setProperty name="kisi" property="sifre" />
+
+        <!--JSP IF implementation.-->
+        <%
+            if ((kisi.isim != null) && (kisi.sifre != null))
+                if (kisi.sifreKontrol()) {
+
+        %>
+        <p>Welcome, <%=kisi.isim%></p>
+        <%
+            kisi.KullanıcıListesi();
+        } else {
+
+        %> 
+        <p style="color:red;">Bilgiler Yanlış</p>
+        <a href="http://localhost:8080/WebApplication4/">Tekrar Deneyiniz</a>
+        <%                }
+        %>
+
+
     </body>
 </html>

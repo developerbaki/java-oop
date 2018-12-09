@@ -22,6 +22,8 @@ public class CiroService {
 
         DataGenerator dataGenerator = new DataGenerator();
         List<CiroDataSet> cirosData = dataGenerator.GenerateCiroData(yearCount);
+        List<CiroDataSet> cirosDataYear = dataGenerator.GenerateCiroDataYear(2005);
+        
         Date dNow = new Date();
         SimpleDateFormat ft
                 = new SimpleDateFormat("yyyy");
@@ -40,26 +42,45 @@ public class CiroService {
             }
             StrToplam = StrToplam.concat("" + toplam + "     ");
         }
-       // System.out.println(StrYears);
-      //  System.out.println(StrToplam);
+        // System.out.println(StrYears);
+        //  System.out.println(StrToplam);
 
         return "";
 
     }
+
     // 2016.1 -  2016.2  -  2016.3  -  2016.4
     // 500.0   - 700.0   -   900.0  -    885.0
-    public String getCirosOfQuarter(){
-        int quarter = (Calendar.getInstance().get(Calendar.MONTH) / 3); // 1. ay ile 3 ay arasını alıyorum.
-String[] mQuarterKey = {"qt1", "qt2", "qt3", "qt4"}; //string değişkenin de 4 ayrı şekilde yılı alıyorum
-String strQuarter = mQuarterKey[quarter];
-System.out.println("");
+    public String getCirosOfQuarter() {
+        int quarter = (Calendar.getInstance().get(Calendar.YEAR) / 4); // 1. ay ile 3 ay arasını alıyorum.
+        String[] mQuarterKey = {"qt1", "qt2", "qt3", "qt4"}; //string değişkenin de 4 ayrı şekilde yılı alıyorum
+        String strQuarter = mQuarterKey[quarter];
+//System.out.println("");
         return "";
     }
-    
+
     // 2016.1 -  2018.1  
     // 500.0   - 700.0  
-    public String compareQuarter(int aYear,int bYear,int quarter){
+    public String compareQuarter(int aYear, int bYear, int quarter) {
         return "ss";
     }
+    // Bir yılın 4 tane periyodunun ayrı ayrı cirolarını gösteren çıktı.
+//Bir yılı dörde bölüp her 3 ayda bir toplam almamız gerekiyor.
+//Her quartera ait değeri saklamamız gerekiyor.
+// Her quarter için ekran çıktısı yapılacak.
 
+    public String getQuarters(int year) {
+                DataGenerator dataGenerator = new DataGenerator();
+        List<CiroDataSet> cirosData = dataGenerator.GenerateCiroDataYear(year);
+        Date dNow = new Date();
+        SimpleDateFormat ft
+                = new SimpleDateFormat("yyyy");
+        
+        
+        
+        
+        return "";
+    }
 }
+
+

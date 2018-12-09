@@ -23,9 +23,44 @@ import java.util.Locale;
 //yıl bazlı günlük karşılaştırma.
 public class DataGenerator {// veri oluşturucu-- ciro üreticez
 
-   private final List<CiroDataSet> ciros = new  ArrayList<>();
+    private final List<CiroDataSet> ciros = new ArrayList<>();
 
-   
+    public List<CiroDataSet> GenerateCiroDataYear(int year) {
+
+        int currentYear = year; //yılı int değişkeni şeklinde tanımladım.
+        //System.out.println(year);
+
+        // System.out.println(i);
+        for (int month = 1; month <= 12; month++) {
+
+            String dateString = month + "/" + "01/" + year; // burada yılı,ayı,günü format ettirdim.
+
+            LocalDate convertedDate = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("M/dd/yyyy")); // bu formatta yazdırdım.
+            convertedDate = convertedDate.withDayOfMonth(
+                    convertedDate.getMonth().length(convertedDate.isLeapYear()));
+            Date date = Date.from(convertedDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+            SimpleDateFormat convertedFormat // aldığım date ne gibi bir formatta almak istediğimi belirledim.
+                    = new SimpleDateFormat("dd");
+            int currentDay = Integer.parseInt(convertedFormat.format(date)); //yılı int değişkeni şeklinde tanımladım.
+// burada currentDay seklinde ayın kacıncı günde bittiğini buldum.
+            for (int day = 1; day <= currentDay; day++) { // bulduğum ayın son gününe kadar geldim.
+                //System.out.println(day); // ekrana bastırdım.
+
+                CiroDataSet ciroDataSet = new CiroDataSet(); //nesne oluşturdum.
+                ciroDataSet.amount = Math.round(Math.random() * 100);
+                ciroDataSet.day = day;
+                ciroDataSet.month = month;
+                ciroDataSet.year = year;
+                ciros.add(ciroDataSet);
+                //System.out.println(ciroDataSet.amount);
+                // this.ciros.add(e)
+
+            }
+        }
+
+        return ciros;
+
+    }
 
     public List<CiroDataSet> GenerateCiroData(int yearCount) {
 
@@ -52,16 +87,16 @@ public class DataGenerator {// veri oluşturucu-- ciro üreticez
 // burada currentDay seklinde ayın kacıncı günde bittiğini buldum.
                 for (int day = 1; day <= currentDay; day++) { // bulduğum ayın son gününe kadar geldim.
                     //System.out.println(day); // ekrana bastırdım.
-                    
-                    CiroDataSet ciroDataSet= new CiroDataSet(); //nesne oluşturdum.
-                    ciroDataSet.amount=Math.round(Math.random()*100) ;
-                    ciroDataSet.day=day;
-                    ciroDataSet.month=month;
-                    ciroDataSet.year=year;
+
+                    CiroDataSet ciroDataSet = new CiroDataSet(); //nesne oluşturdum.
+                    ciroDataSet.amount = Math.round(Math.random() * 100);
+                    ciroDataSet.day = day;
+                    ciroDataSet.month = month;
+                    ciroDataSet.year = year;
                     ciros.add(ciroDataSet);
                     //System.out.println(ciroDataSet.amount);
-                   // this.ciros.add(e)
-                           
+                    // this.ciros.add(e)
+
                 }
             }
 

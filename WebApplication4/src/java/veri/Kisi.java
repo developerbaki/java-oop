@@ -5,21 +5,37 @@
  */
 package veri;
 
+import java.util.List;
+
 /**
  *
  * @author baki
  */
 public class Kisi {
-    String isim;
-public Kisi(){ // constructor
-isim = null;
-System.out.println("kisi objesi oluşturuldu.");
-}
-    public String getIsim() {
-        return isim;
+   public String isim;
+   public String sifre;
+
+        public void setSifre(String sifre) { // dışarıdan gelen bir şifreyi içerdeki şifreye eşitliyorum.
+        this.sifre = sifre;
     }
 
+public boolean sifreKontrol(){
+DbKatmanı dbk= new DbKatmanı();
+return dbk.KullaniciKontrol(isim, sifre);
+}
+public List<Kisi> KullanıcıListesi(){
+DbKatmanı dbk = new DbKatmanı();
+return dbk.kullaniciListesi();
+
+}
+    
+
     public void setIsim(String isim) {
-        this.isim = isim;
+        this.isim = isim; // obje dolduruyorum.
+    }
+    public void main(String args[]){
+    Kisi k= new Kisi();
+    k.setIsim("baki");
+    k.setSifre("123");
     }
 }
